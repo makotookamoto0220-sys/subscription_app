@@ -1,0 +1,15 @@
+<tr>
+  <td class="fw-semibold">
+    <%= link_to subscription.name, subscription %>
+  </td>
+  <td class="text-end"><%= subscription.price %> 円</td>
+  <td class="text-center"><%= subscription.payment_day %> 日</td>
+  <td class="text-secondary"><%= subscription.category %></td>
+  <td class="text-center">
+    <% if subscription.active %>
+      <span class="badge text-bg-success">使用中</span>
+    <% else %>
+      <span class="badge text-bg-light border">未使用</span>
+    <% end %>
+  </td>
+</tr>
