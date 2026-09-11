@@ -12,4 +12,8 @@
       <span class="badge text-bg-light border">未使用</span>
     <% end %>
   </td>
+  <td class="text-end">
+    <%= link_to "編集", edit_subscription_path(subscription), class: "btn btn-sm btn-outline-primary" %>
+    <%= link_to "削除", subscription, data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: "btn btn-sm btn-outline-danger" %>
+  </td>
 </tr>
