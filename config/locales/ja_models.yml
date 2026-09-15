@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    models:
+      subscription: サブスク
+    attributes:
+      subscription:
+        name: サービス名
+        price: 料金
+        payment_method: 支払い方法
+        payment_day: 支払日
+        active: 使用状況
+        category: カテゴリ
+        memo: メモ
