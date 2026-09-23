@@ -2,6 +2,9 @@ class SubscriptionsController < ApplicationController
     before_action :authenticate_user!
   def index
   @subscriptions = current_user.subscriptions
+  if params[:keyword].present?
+      @subscriptions = @subscriptions.where("name LIKE ?", "%#{params[:keyword]}%")
+    end
   end
 
   def show
