@@ -1,6 +1,7 @@
 class SubscriptionsController < ApplicationController
+    before_action :authenticate_user!
   def index
-  @subscriptions = Subscription.all
+  @subscriptions = current_user.subscriptions
   end
 
   def show
@@ -8,11 +9,11 @@ class SubscriptionsController < ApplicationController
   end
 
   def new
-    @subscription = Subscription.new
+    @subscription = current_user.subscriptions.build
   end
 
   def create
-    @subscription = Subscription.new(subscription_params)
+    @subscription = current_user.subscriptions.build(subscription_params)
     if @subscription.save
        redirect_to @subscription, notice: "登録しました"
     else

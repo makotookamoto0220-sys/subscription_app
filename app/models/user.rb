@@ -8,4 +8,5 @@ class User < ApplicationRecord
       user.password = SecureRandom.urlsafe_base64
     end
   end
+  has_many :subscriptions
 end
