@@ -5,13 +5,20 @@
 
 ## 公開URL
 
-（デプロイ後に追記）
+https://subscription-app-81ug.onrender.com
 
-ゲストログインボタンから、登録不要ですぐにお試しいただけます。
+「ゲストログイン」ボタンから、登録不要ですぐにお試しいただけます。
+（無料プランのため、初回アクセス時は起動に30秒ほどかかる場合があります）
 
 ## スクリーンショット
 
-（一覧画面などのスクショをここに貼る）
+### 一覧画面（ゲストログイン）
+![一覧画面](docs/index.png)
+
+### ログイン画面
+![ログイン画面](docs/login.png)
+
+
 
 ## なぜ作ったか（開発動機）
 
@@ -42,7 +49,7 @@
 
 ## ER図
 
-（ER図の画像をここに貼る）
+![ER図](docs/er.png)
 
 users（1）── has many ──（多）subscriptions
 1人のユーザーが複数のサブスクを持ち、subscriptions の user_id で紐付けています。
@@ -66,4 +73,23 @@ users（1）── has many ──（多）subscriptions
 - テストコード（RSpec）の導入
 - ロゴ画像のアップロード（Active Storage）
 
+
 ## セットアップ手順
+
+```bash
+# リポジトリをクローン
+git clone https://github.com/makotookamoto0220-sys/subscription_app.git
+cd subscription_app
+
+# gemをインストール
+bundle install
+
+# データベースを作成・マイグレーション
+rails db:create
+rails db:migrate
+
+# サーバーを起動
+rails server
+```
+
+ブラウザで `http://localhost:3000` にアクセスしてください。
